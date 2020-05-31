@@ -1,5 +1,6 @@
 <div class='post-card'>
   <%= link_to post_path(post) do %>
+  <%= image_tag ('https://picsum.photos/500/500'), class:'video-player' %>
   <%= post.description %>
   <%= link_to 'Comment', new_post_comment_path(post) %>
   <div class='comments-section'>

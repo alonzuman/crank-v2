@@ -1,0 +1,11 @@
+<%= render  "shared/top_bar", center: @user.username %>
+<div class='container center'>
+  <% if current_user == @user %>
+  <%= link_to 'Edit Profile', edit_user_registration_path, class:'btn btn-primary', style:'width: 9rem;' %>
+  Cranks:
+  <%= @user.posts.size %>
+  <% @user.posts.each do |post| %>
+  <%= render  "shared/post_card", post:post %>
+  <% end %>
+  <% end %>
+</div>

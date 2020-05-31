@@ -1,0 +1,5 @@
+<%= render  "shared/top_bar", left: (link_to 'Back', root_path) %>
+<div class='container'>
+  <%= @post.user.username %>
+  <%= @post.description %>
+</div>

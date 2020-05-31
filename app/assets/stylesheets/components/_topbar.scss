@@ -1,0 +1,22 @@
+.top-bar {
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background-color: $background;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid $border;
+}
+
+.top-bar-menu {  
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  
+  a {
+    color: $text-main;
+  }
+
+  li {
+    list-style: none;
+  }
+}

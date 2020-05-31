@@ -1,0 +1,32 @@
+.action-bar {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  border-top: 1px solid $border;
+  background-color: $background;
+  color: $text-main;
+  padding: 0.5rem 1rem;
+}
+
+.action-bar-menu {
+  display: flex;
+  justify-content: space-around;
+
+  a {
+    text-decoration: none;
+    color: $text-main;
+  }
+}
+
+.action-bar ul {
+  padding: 0;
+  margin: 0;
+}
+
+.action-bar-menu li {
+  list-style: none;
+}
+
+.nav-item {
+  padding-top: 0.5rem;
+}

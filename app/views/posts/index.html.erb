@@ -1,0 +1,6 @@
+<%= render  "shared/top_bar", center: (link_to 'Crank',root_path) %>
+<div class='container'>
+  <% @posts.each do |post| %>
+  <%= render "shared/post_card", post: post %>
+  <% end %>
+</div>

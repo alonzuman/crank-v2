@@ -1,5 +1,11 @@
 <div class='post-card'>
   <%= link_to post_path(post) do %>
   <%= post.description %>
+  <%= link_to 'Comment', new_post_comment_path(post) %>
+  <div class='comments-section'>
+    <% post.comments.each do |comment| %>
+    <%= render  "shared/comment_card", comment: comment %>
+    <% end %>
+  </div>
   <% end %>
 </div>

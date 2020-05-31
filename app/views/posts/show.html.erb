@@ -2,4 +2,9 @@
 <div class='container'>
   <%= @post.user.username %>
   <%= @post.description %>
+  <div class='comments-section'>
+    <% @post.comments.each do |comment| %>
+    <%= render  "shared/comment_card", comment:comment %>
+    <% end %>
+  </div>
 </div>

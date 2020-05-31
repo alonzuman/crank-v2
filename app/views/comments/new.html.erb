@@ -1,0 +1,5 @@
+<%= render  "shared/top_bar" %>
+<%= simple_form_for [@post, @comment] do |f|%>
+<%= f.input :content %>
+<%= f.button :submit, class:'btn btn-primary' %>
+<% end %>

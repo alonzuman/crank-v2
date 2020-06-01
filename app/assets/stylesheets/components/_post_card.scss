@@ -1,4 +1,18 @@
 .post-card {
   padding: 1rem;
   color: $text-main;
+  width: 100%;
+}
+
+.post-user-info {
+  text-align: left;
+  padding: 1rem 0;
+  display: flex;
+}
+
+.user-and-description {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  display: flex;
 }

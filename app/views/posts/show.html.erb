@@ -1,11 +1,12 @@
-<%= render  "shared/top_bar", left: (link_to 'Back', root_path) %>
+<%= render  "shared/top_bar", center: ("#{@post.user.username}\'s post") %>
 <div class='container center'>
   <%= image_tag ('https://picsum.photos/500/500'), class:'video-player' %>
-  <%= @post.user.username %>
-  <%= @post.description %>
-  <div class='comments-section'>
-    <% @post.comments.each do |comment| %>
-    <%= render  "shared/comment_card", comment:comment %>
-    <% end %>
+  <div class='user-and-description'>
+    <%= image_tag ('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1P9NIBPbZvN_8V2uZ8cVfm4Rnwwel8_UF_89HT238qUQAOZ1p&usqp=CAU'),  class:'avatar-small comment-avatar' %>
+    <div>
+      <b><%= @post.user.username %></b>
+      <p><%= @post.description %></p>
+    </div>
   </div>
+  <%= render  "shared/comments_section", post: @post %>
 </div>

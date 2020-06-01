@@ -1,0 +1,24 @@
+.comments-section {
+  text-align: left;
+  width: 100%;
+}
+
+.comment {
+  border-bottom: 1px solid $border;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+
+  p {
+    margin: 0;
+  }
+}
+
+.comment-avatar {
+  margin-right: 1rem;
+}
+
+.comment-button {
+  max-width: 18rem;
+}

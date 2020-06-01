@@ -1,0 +1,7 @@
+<%= link_to 'Think you can do it better?', new_post_comment_path(@post), class:'btn btn-primary comment-button mb-2' %>
+<div class='comments-section'>
+  Comments:
+  <% @post.comments.each do |comment| %>
+  <%= render  "shared/comment_card", comment: comment %>
+  <% end %>
+</div>

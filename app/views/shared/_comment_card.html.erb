@@ -1,4 +1,11 @@
 <div class='comment'>
-  <%= comment.content %>
-  <%= comment.user.username %>
+  <%= link_to user_path(comment.user) do %>
+  <div class='comment-avatar'>
+    <%= image_tag ('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1P9NIBPbZvN_8V2uZ8cVfm4Rnwwel8_UF_89HT238qUQAOZ1p&usqp=CAU'),  class:'avatar-small' %>
+  </div>
+  <% end %>
+  <div class='comment-content'>
+    <b><%= comment.user.username %></b>
+    <p><%= comment.content %></p>
+  </div>
 </div>

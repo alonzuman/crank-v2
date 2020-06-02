@@ -53,7 +53,7 @@ post_data = [
 post_data.each do |data|
   post = Post.new(user: User.all.sample, description: data[:description])
   file = URI.open(data[:url])
-  #post.video.attach(io: file, filename: 'video')
+  post.video.attach(io: file, filename: 'video')
   post.save!
   puts "Created post: #{post.description}"
 end

@@ -5,6 +5,10 @@
   </span>
 </div>
 <div class='container center'>
+  <% if @posts.empty? %>
+  <h5 style='margin-top: 300px;'> Your feed is empty :( <br>Follow other users to have their Crank's appear here! </h5>
+  <%= link_to 'Discover Cranks', root_path, class:'btn btn-primary', style:'width: 180px;' %>
+  <% end %>
   <% @posts.each do |post| %>
   <%= render "shared/post_card", post: post %>
   <% end %>

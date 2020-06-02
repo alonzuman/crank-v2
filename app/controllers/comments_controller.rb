@@ -18,6 +18,6 @@ class CommentsController < ApplicationController
   private
 
   def set_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :video)
   end
 end

@@ -1,5 +1,7 @@
 <div class='post-thumb'>
   <%= link_to post_path(post) do %>
-  <%= image_tag ('https://picsum.photos/500/500'), class:'video-player' %>
+  <% if post.video.attached? %>
+  <%= cl_video_tag(post.video.key, height: '100%', controls: true, width: '100%', class:'video-player') %>
+  <% end %>
   <% end %>
 </div>

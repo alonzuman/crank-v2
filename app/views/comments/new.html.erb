@@ -1,5 +1,8 @@
 <%= render  "shared/top_bar" %>
-<%= simple_form_for [@post, @comment] do |f|%>
-<%= f.input :content %>
-<%= f.button :submit, class:'btn btn-primary' %>
-<% end %>
+<div class='container'>
+  <%= simple_form_for [@post, @comment] do |f|%>
+  <%= f.input :video, as: :file %>
+  <%= f.input :content %>
+  <%= f.button :submit, class:'btn btn-primary' %>
+  <% end %>
+</div>

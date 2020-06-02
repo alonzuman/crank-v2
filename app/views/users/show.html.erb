@@ -1,11 +1,24 @@
 <%= render  "shared/top_bar", center: @user.username %>
 <div class='container center'>
   <div class='user-info'>
+    <% if @user.avatar.attached? %>
+    <%= cl_image_tag(@user.avatar.key, class:'avatar-large')%>
+    <% else %>
     <%= image_tag ('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1P9NIBPbZvN_8V2uZ8cVfm4Rnwwel8_UF_89HT238qUQAOZ1p&usqp=CAU'),  class:'avatar-large' %>
+    <% end %>
     <div class='user-name mt-2'><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></div>
     <% if current_user == @user %>
     <div><%= link_to 'Edit Profile', edit_user_registration_path, class:'btn btn-primary mt-2', style:'width: 9rem;' %></div>
-    <div class='user-stats mt-2'>Cranks:<%= @user.posts.size %></div>
+    <div class='user-stats d-flex mt-2'>
+      <div class='stat-block'>
+        <p><b>Cranks</b></p>
+        <%= @user.posts.size %>
+      </div>
+      <div class='stat-block'>
+        <p><b>Followers</b></p>
+        <%= @user.received_follows.size %>
+      </div>
+    </div>
   </div>
   <div class='posts-grid mt-2'>
     <% @user.posts.each do |post| %>

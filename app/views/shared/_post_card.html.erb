@@ -1,11 +1,17 @@
 <div class='post-card'>
   <div class='post-user-info'>
     <%= link_to user_path(post.user) do %>
+    <% if post.user.avatar.attached? %>
+    <%= cl_image_tag(post.user.avatar.key, class:'avatar-small')%>
+    <% else %>
     <%= image_tag ('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1P9NIBPbZvN_8V2uZ8cVfm4Rnwwel8_UF_89HT238qUQAOZ1p&usqp=CAU'),  class:'avatar-small' %>
+    <% end %>
     <%= post.user.username %>
     <% end %>
   </div>
-  <%= image_tag ('https://picsum.photos/500/500'), class:'video-player' %>
+  <% if post.video.attached? %>
+  <%= cl_video_tag(post.video.key, height: '100%', controls: true, width: '100%', class:'video-player') %>
+  <% end %>
   <b><%= link_to post_path(post) do %></b>
   <p><%= post.description %></p>
   <% end %>

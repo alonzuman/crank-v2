@@ -1,4 +1,4 @@
-<%= render  "shared/top_bar", center: ("#{@post.user.username}\'s post") %>
+<%= render  "shared/top_bar", center: ("#{@post.user.username}\'s post"), right: ((@post.user === current_user) ? (link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'} ) : '') %>
 <div class='container center'>
   <% if @post.video.attached? %>
   <%= cl_video_tag(@post.video.key, height: '100%', controls: true, width: '100%', class:'video-player') %>

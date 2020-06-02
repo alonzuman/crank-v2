@@ -3,7 +3,7 @@
   <% if @post.video.attached? %>
   <%= cl_video_tag(@post.video.key, height: '100%', controls: true, width: '100%', class:'video-player') %>
   <% end %>
-  <div class='user-and-description'>
+  <div class='user-and-description pb-0'>
     <% if @post.user.avatar.attached? %>
     <%= cl_image_tag(@post.user.avatar.key, class:'avatar-small mr-3')%>
     <% else %>

@@ -1,6 +1,12 @@
 class PostsController < ApplicationController
-  def index
+  def discover
     @posts = Post.all
+  end
+
+  def feed
+    # for each user i follow, fetch its posts
+    # push them into new array
+    @posts = Post.where(user_id: current_user.following_ids)
   end
 
   def new

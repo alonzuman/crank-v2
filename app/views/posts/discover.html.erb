@@ -1,0 +1,11 @@
+<div class='top-buttons-container'>
+  <span class='top-buttons'>
+    <%= link_to 'Trending', root_path, class:'blank-button selected-button mr-1' %>
+    <%= link_to 'For you', feed_path, class:'blank-button ml-1' %>
+  </span>
+</div>
+<div class='container center'>
+  <% @posts.each do |post| %>
+  <%= render "shared/post_card", post: post %>
+  <% end %>
+</div>

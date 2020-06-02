@@ -5,19 +5,19 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
-  def show
+  def show?
     return true
   end
 
-  def unfollow
-    return true
-  end
+  # def unfollow?
+  #   return true
+  # end
   
-  def follow
-    return true
-  end
+  # def follow?
+  #   return true
+  # end
 
-  def followers
+  def followers?
     return true
   end
 end

@@ -9,6 +9,17 @@
     <div class='user-name mt-2'><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></div>
     <% if current_user == @user %>
     <div><%= link_to 'Edit Profile', edit_user_registration_path, class:'btn btn-primary mt-2', style:'width: 9rem;' %></div>
+    <% else %>
+    <% if @user.followers.include?(current_user) %>
+    <div><%= link_to 'Unfollow', unfollow_path(@user), class:'btn btn-secondary mt-2', style:'width: 9rem;' %></div>
+    <% else %>
+    <div><%= link_to 'Follow', follow_path(@user), class:'btn btn-primary mt-2', style:'width: 9rem;' %></div>
+    <% end %>
+    <% end %>
+
+
+
+
     <div class='user-stats d-flex mt-2'>
       <div class='stat-block'>
         <p><b>Cranks</b></p>
@@ -25,5 +36,4 @@
     <%= render  "shared/post_thumbnail", post:post %>
     <% end %>
   </div>
-  <% end %>
 </div>

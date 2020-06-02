@@ -1,6 +1,8 @@
-<%= render  "shared/top_bar", center: 'New Post', left: (link_to 'Back', :back) %>
-<%= simple_form_for(@post) do |f|%>
-<%= f.input :video, as: :file %>
-<%= f.input :description %>
-<%= f.button :submit, class:'btn btn-primary' %>
+<%= render  "shared/top_bar", center: 'New Crank', left: (link_to 'Back', :back) %>
+<div class='container'>
+  <%= simple_form_for(@post) do |f|%>
+  <%= f.input :video, as: :file %>
+  <%= f.input :description %>
+  <%= f.button :submit, class:'btn btn-primary' %>
+</div>
 <% end %>

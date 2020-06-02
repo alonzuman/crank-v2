@@ -18,10 +18,11 @@
   <% end %>
   <% end %>
 
-  <% if post.comments.size > 0 %>
+  <%= render  "shared/post_buttons", post: post %>
+
+  <% if post.comments.size > 1 %>
   <%= link_to post_path(post) do %>
-  <i class="far fa-comment"></i>
-  View all <%= post.comments.size %> replies!
+  View All Replies
   <% end %>
   <% end %>
 </div>

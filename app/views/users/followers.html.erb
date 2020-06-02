@@ -1,0 +1,4 @@
+<%= render  "shared/top_bar", left: (link_to 'Back', :back), center:'Followers' %>
+<% @followers.each do |follower| %>
+<%= render  "shared/follower_card", follower:follower %>
+<% end %>

@@ -1,0 +1,10 @@
+<div class='follower-card-container'>
+  <div class='follower-card'>
+    <%= link_to user_path(follower) do %>
+    <% if follower.avatar.attached? %>
+    <%= cl_image_tag(follower.avatar.key, class:'avatar mr-3') %>
+    <% end %>
+    <%= follower.username %>
+    <% end %>
+  </div>
+</div>

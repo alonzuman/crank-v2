@@ -5,7 +5,7 @@
     <% if post.user.avatar.attached? %>
     <%= cl_image_tag(post.user.avatar.key, class:'avatar-small mr-3')%>
     <% else %>
-    <%= image_tag ('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1P9NIBPbZvN_8V2uZ8cVfm4Rnwwel8_UF_89HT238qUQAOZ1p&usqp=CAU'),  class:'avatar-small' %>
+    <%= image_tag ('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1P9NIBPbZvN_8V2uZ8cVfm4Rnwwel8_UF_89HT238qUQAOZ1p&usqp=CAU'),  class:'avatar-small mr-3' %>
     <% end %>
     <% end %>
     <div class='comment-content'>

@@ -14,5 +14,12 @@
       <p><%= @post.description %></p>
     </div>
   </div>
+  <%= @post.likes.size %>
+  <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+  <% if pre_like %>
+  <%= link_to '', post_like_path(@post, pre_like), method: :delete, class:'fas fa-heart', id:'heart' %>
+  <% else %>
+  <%= link_to '', post_likes_path(@post), method: :post, class:'far fa-heart', id:'heart' %>
+  <% end %>
   <%= render  "shared/comments_section", post: @post %>
 </div>

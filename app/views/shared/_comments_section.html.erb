@@ -1,4 +1,6 @@
-<%= link_to 'Think you can do it better?', new_post_comment_path(@post), class:'btn btn-primary comment-button mb-2' %>
+<div class='comment-button-container'>
+  <%= link_to 'Think you can do it better?', new_post_comment_path(@post), class:'btn btn-primary comment-button mb-2' %>
+</div>
 <div class='comments-section'>
   <% if !@post.comments.empty? %>
   Comments:

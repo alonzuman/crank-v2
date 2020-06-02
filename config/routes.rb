@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: 'posts#discover'
   resources :posts do
     resources :comments, only: [:new, :create]
+    resources :likes
   end
+  
   get '/users/:id/followers', to: 'users#followers', as: 'followers'
   get '/feed', to:'posts#feed', as: 'feed'
   get '/users/:id/follow', to: 'users#follow', as: 'follow'

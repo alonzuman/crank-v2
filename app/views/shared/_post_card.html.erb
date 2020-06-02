@@ -14,8 +14,14 @@
     </div>
   </div>
   <% if post.video.attached? %>
-  <%= cl_video_tag(post.video.key, height: '100%', controls: true, width: '100%', class:'video-player') %>
+  <%= cl_video_tag(post.video.key, height: '100%', controls: true, width: '100%', class:'video-player', controlsList:"nodownload nofullscreen noremoteplayback", controlls: 'false') %>
   <% end %>
   <% end %>
-  <%= link_to 'View full crank', post_path(post), class:'btn btn-secondary'%>
+
+  <% if post.comments.size > 0 %>
+  <%= link_to post_path(post) do %>
+  <i class="far fa-comment"></i>
+  View all <%= post.comments.size %> replies!
+  <% end %>
+  <% end %>
 </div>

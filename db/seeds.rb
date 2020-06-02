@@ -10,10 +10,10 @@ User.destroy_all
 
 puts 'Creating users...'
 
-User.create!(email: "bob@bob.bob" , password: '123456', first_name: Faker::Name.name , last_name: Faker::Name.name)
+User.create!(username: 'alonzuman', email: "alonzuman7@gmail.com" , password: '123456', first_name: 'Alon' , last_name: 'Zuman')
 
 10.times do
-  User.create!(email: Faker::Internet.email, password: '123456', first_name: Faker::Name.name , last_name: Faker::Name.name)
+  User.create!(email: Faker::Internet.email, password: '123456', username: Faker::Name.unique.name.gsub(/\s+/, ""), first_name: Faker::Name.name , last_name: Faker::Name.name)
 end
 
 puts 'Creating posts...'

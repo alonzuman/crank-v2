@@ -1,5 +1,4 @@
 .post-card {
-  padding: 1rem;
   color: $text-main;
   width: 100%;
 }
@@ -15,4 +14,8 @@
   text-align: left;
   padding: 1rem 0;
   display: flex;
+}
+
+#heart {
+  font-size: 1.5rem;
 }

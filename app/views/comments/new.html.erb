@@ -1,4 +1,4 @@
-<%= render  "shared/top_bar" %>
+<%= render  "shared/top_bar", center: 'New comment', left: (link_to 'Back', post_path(@post)) %>
 <div class='container'>
   <%= simple_form_for [@post, @comment] do |f|%>
   <%= f.input :video, as: :file %>

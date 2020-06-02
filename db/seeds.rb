@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 require 'faker'
 
@@ -17,10 +10,10 @@ User.destroy_all
 
 puts 'Creating users...'
 
-User.create!(email: "bob@bob.bob" , password: '123456', full_name: Faker::Name.name)
+User.create!(email: "bob@bob.bob" , password: '123456', first_name: Faker::Name.name , last_name: Faker::Name.name)
 
 10.times do
-  User.create!(email: Faker::Internet.email, password: '123456', full_name: Faker::Name.name)
+  User.create!(email: Faker::Internet.email, password: '123456', first_name: Faker::Name.name , last_name: Faker::Name.name)
 end
 
 puts 'Creating posts...'
@@ -60,7 +53,7 @@ post_data = [
 post_data.each do |data|
   post = Post.new(user: User.all.sample, description: data[:description])
   file = URI.open(data[:url])
-  post.video.attach(io: file, filename: 'video')
+  #post.video.attach(io: file, filename: 'video')
   post.save!
   puts "Created post: #{post.description}"
 end

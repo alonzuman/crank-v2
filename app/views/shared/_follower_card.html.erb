@@ -3,6 +3,8 @@
     <%= link_to user_path(follower) do %>
     <% if follower.avatar.attached? %>
     <%= cl_image_tag(follower.avatar.key, class:'avatar mr-3') %>
+    <% else %>
+    <%= image_tag ('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1P9NIBPbZvN_8V2uZ8cVfm4Rnwwel8_UF_89HT238qUQAOZ1p&usqp=CAU'),  class:'avatar mr-3' %>
     <% end %>
     <%= follower.username %>
     <% end %>

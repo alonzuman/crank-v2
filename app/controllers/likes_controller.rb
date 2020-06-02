@@ -8,15 +8,17 @@ class LikesController < ApplicationController
     else
       @post.likes.create(user_id: current_user.id)
     end
+    authorize @post
     redirect_to post_path(@post)
   end
-
+  
   def destroy
     if !(already_liked?)
       flash[:notice] = "Cannot unlike"
     else
       @like.destroy
     end
+    authorize @like
     redirect_to post_path(@post)
   end
 

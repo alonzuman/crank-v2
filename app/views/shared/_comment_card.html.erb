@@ -1,8 +1,8 @@
 <div class='comment'>
   <%= link_to user_path(comment.user) do %>
   <div class='comment-avatar'>
-    <% if @post.user.avatar.attached? %>
-    <%= cl_image_tag(@post.user.avatar.key, class:'avatar-small')%>
+    <% if comment.user.avatar.attached? %>
+    <%= cl_image_tag(comment.user.avatar.key, class:'avatar-small')%>
     <% else %>
     <%= image_tag ('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1P9NIBPbZvN_8V2uZ8cVfm4Rnwwel8_UF_89HT238qUQAOZ1p&usqp=CAU'),  class:'avatar-small' %>
     <% end %>
